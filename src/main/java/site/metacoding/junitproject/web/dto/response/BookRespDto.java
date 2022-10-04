@@ -1,9 +1,8 @@
-package site.metacoding.junitproject.web.dto;
+package site.metacoding.junitproject.web.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import site.metacoding.junitproject.domain.Book;
 
 @NoArgsConstructor
 @Getter
