@@ -16,10 +16,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import site.metacoding.junitproject.domain.Book;
 import site.metacoding.junitproject.domain.BookRepository;
+import site.metacoding.junitproject.util.MailSender;
 import site.metacoding.junitproject.web.dto.request.BookSaveReqDto;
 import site.metacoding.junitproject.web.dto.response.BookListRespDto;
 import site.metacoding.junitproject.web.dto.response.BookRespDto;
-import site.metacoding.util.MailSender;
 
 @ExtendWith(MockitoExtension.class)
 public class BookServiceTest {
@@ -42,7 +42,7 @@ public class BookServiceTest {
 
         // stub (가설)
         when(bookRepository.save(any())).thenReturn(dto.toEntity());
-        // when(mailSender.send()).thenReturn(true);
+        when(mailSender.send()).thenReturn(true);
 
         // when
         BookRespDto bookRespDto = bookService.책등록하기(dto);
